@@ -32,11 +32,9 @@ def main():
         except Exception as e:
             answer = f"❌ Error: {str(e)}"
 
-        # 📜 Append to history
         chat_history.append({"role": "user", "text": query})
         chat_history.append({"role": "assistant", "text": answer})
 
-        # 💬 Render bubbles
         chat_bubbles = []
         for msg in chat_history:
             bubble_style = {
@@ -66,9 +64,8 @@ def main():
 
         return chat_bubbles, chat_history, ""
         
-    app.run()
-    
-    
+    app.run(host="0.0.0.0", port=8050)
+      
 if __name__ == "__main__":
     main()
     
